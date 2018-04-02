@@ -3,13 +3,12 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<groupId>com.example</groupId>
-	<artifactId>thymeleaf-tour</artifactId>
+	<groupId>edu.sjsu.medical</groupId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
-	<name>thymeleaf-tour</name>
-	<description>Spring Boot and Thymeleaf Template Engine Example</description>
+	<name>medicine-tracker</name>
+	<description>Spring Boot and Thymeleaf Template Engine Example. Medicine Tracker</description>
 
 	<parent>
 		<groupId>org.springframework.boot</groupId>
@@ -54,4 +53,5 @@
 	</build>
 
 
+	<artifactId>medicine-tracker</artifactId>
 </project>

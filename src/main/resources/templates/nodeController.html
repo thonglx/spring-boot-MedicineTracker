@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.springframework.org/security/tags">
+<head th:include="leaveLayout :: headerFragment(${title})"></head>
+<body>
+      <nav th:replace="layout :: header"></nav>
+      <div id="wrapper" class= "containter">
+         <div class="page-header">
+            <h1>Node Name's Information </h1>
+         </div>
+<div class="btn-group" role="group" aria-label="Basic example">
+  <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#issueMedicine" >Issue Medicine</button>
+  <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#newTransaction" >New Transaction</button>
+  <button type="button"  class="btn btn-secondary" data-toggle="collapse" data-target="#allTransactions">All Transactions</button>
+</div>
+
+<div id="allTransactions" class="collapse">
+<div id="addTopMargin"></div>
+<table class="table table-bordered table-striped table-hover table-responsive">
+	<thead>
+		<tr>
+			<th>
+				Transaction Date
+			</th>
+			<th>
+				Issuer
+			</th>
+			<th>
+				Buyer
+			</th>
+			<th>
+				Seller
+			</th>
+			<th>
+				Medicine
+			</th>
+			<th>
+				Amount
+			</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>
+				<p>04/02/2018</p>
+			</td>
+			<td>
+					<p>Hospital</p>
+			</td>
+			<td>
+				<p>N/A</p>
+			</td>
+			<td>
+				<p>N/A</p>
+			</td>
+			<td>
+				<p>A</p>
+			</td>
+			<td>
+				<p>100</p>
+			</td>
+		</tr>
+				<tr>
+			<td>
+				[CONTENT]
+			</td>
+			<td>
+				[CONTENT]
+			</td>
+			<td>
+				[CONTENT]
+			</td>
+			<td>
+				[CONTENT]
+			</td>
+			<td>
+				[CONTENT]
+			</td>
+			<td>
+				[CONTENT]
+			</td>
+		</tr>
+				<tr>
+			<td>
+				[CONTENT]
+			</td>
+			<td>
+				[CONTENT]
+			</td>
+			<td>
+				[CONTENT]
+			</td>
+			<td>
+				[CONTENT]
+			</td>
+			<td>
+				[CONTENT]
+			</td>
+			<td>
+				[CONTENT]
+			</td>
+		</tr>
+	</tbody>
+</table>
+</div>
+
+
+<!--   <div class="form-group row">
+    <label for="nodeName" class="col-sm-2 col-form-label">Node Name</label>
+    <div class="col-sm-10">
+ 		<p class="form-control-static">Node Name goes here</p>
+    </div>
+  </div> -->
+
+<!-- Modal issue Medicine -->
+<div id="issueMedicine" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Issue Medicine</h4>
+      </div>
+      <div class="modal-body">
+        <form>
+
+  <div class="form-group">
+    <label for="nodeSelect">Select Issuer</label>
+    <select class="form-control" id="nodeSelect">
+      <option>Hospital</option>
+      <option>Pharmacy</option>
+      <option>Patient</option>
+    </select>
+  </div>
+  
+   <div class="form-group">
+    <label for="medicineSelect">Select Medicine</label>
+    <select class="form-control" id="medicineSelect">
+      <option>A</option>
+      <option>B</option>
+      <option>C</option>
+    </select>
+  </div>
+  
+   <div class="form-group">
+    <label for="Amount">Amount</label>
+    <input type="Number" class="form-control" id="medicineAmount" placeholder="100"/>
+  </div>
+
+</form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+<!-- / End modal for issue Medicine -->
+
+<!-- Modal Create New Transaction -->
+<div id="newTransaction" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">New Transaction</h4>
+      </div>
+      <div class="modal-body">
+        <form>
+
+  <div class="form-group">
+    <label for="nodeSelect">Select Seller</label>
+    <select class="form-control" id="selectSeller">
+      <option>Hospital</option>
+      <option>Pharmacy</option>
+      <option>Patient</option>
+    </select>
+  </div>
+  
+    <div class="form-group">
+    <label for="nodeSelect">Select Buyer</label>
+    <select class="form-control" id="selectBuyer">
+      <option>Hospital</option>
+      <option>Pharmacy</option>
+      <option>Patient</option>
+    </select>
+  </div>
+  
+   <div class="form-group">
+    <label for="medicineSelect">Select Medicine</label>
+    <select class="form-control" id="selectMedicine">
+      <option>A</option>
+      <option>B</option>
+      <option>C</option>
+    </select>
+  </div>
+  
+   <div class="form-group">
+    <label for="Amount">Amount</label>
+    <input type="Number" class="form-control" id="transactionAmount" placeholder="100"/>
+  </div>
+
+</form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+<!-- / End modal for issue Medicine -->
+
+</div><!-- /.wrapper -->
+
+</body>
+</html>

@@ -1,0 +1,66 @@
+body {
+  padding-top: 50px;
+}
+
+table{
+	 overflow:scroll;
+}
+#addTopMargin { 
+    margin-top: 30px;
+}
+
+
+th,td{
+	text-align:center;
+}
+.caret-right {
+  display: inline-block;
+  color: #777
+  width: 0;
+  height: 0;
+  margin-left: 2px;
+  vertical-align: middle;
+  border-left: 5px solid;
+  border-bottom: 5px solid transparent;
+  border-top: 5px solid transparent;
+}
+
+textarea{
+    height: 100%;
+    width: 100%;
+   -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+    -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+    box-sizing: border-box;         /* Opera/IE 8+ */
+}
+
+#container{
+	padding-left: 65px;
+	padding-right: 30px;
+	padding-top: 15px;
+	padding-bottom: 15px;
+	width: 80%;
+	min-height:100%;
+	margin:auto;
+	position:absolute;
+	display: table-row;
+}
+
+#wrapper
+{
+  display:flex;
+  justify-content: center;
+}
+
+.jumbotron{
+	background-size:cover;
+	color: White;
+	overflow:auto;
+}
+
+.employeeButton {
+	width: 150px !important;
+}
+
+.intermitment {
+	margin-top:8px;
+}

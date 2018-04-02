@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head th:fragment="headerFragment (pageTitle)">
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+<!-- Replace The pageTitle with current page Title -->
+<title th:text="${pageTitle}"> LeaveManagement </title>
+
+<!-- SJSU favicon -->
+<link  type="image/ico" href="../static/img/icon/favicon.ico" th:href="@{/img/icon/favicon.ico}" rel="icon" />
+<!-- Bootstrap core css -->
+<link
+    href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+    th:href="@{/css/bootstrap.min.css}"
+    rel="stylesheet" />
+<!-- Import Google Font -->
+<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet"></link>
+<!-- Custom Style -->
+<link type="text/css" href="../static/css/navbar-fixed-top.css" th:href="@{/css/leaveStyle.css}" rel="stylesheet" />
+<!-- Jquery core -->
+<script type="application/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js" th:src="@{/js/jquery-3.2.1.min.js}"></script>
+<!-- Bootstrap JS core -->
+<script type="application/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" th:src="@{/js/bootstrap.min.js}"></script>
+<!-- Dropdown menu JS -->
+<script type="application/javascript" th:src="@{/js/dropdown-menu.js}"></script>
+
+<style th:inline="text">
+    
+    body{
+    background: url([[@{/img/bg-pattern-sjsu-02.png}]]) top right no-repeat #e6e6e0;
+    font-family: 'Open Sans', sans-serif;
+    }
+    
+    #wrapper {
+    background: url([[@{/img/bg-left-sjsu-02.png}]]) no-repeat #fff;
+	}
+
+</style>
+
+	<th:block th:if="${pageTitle == 'Main Menu'}">
+<style th:inline="text">
+    .jumbotron {
+    background-image:  url([[@{/img/towerhall_towerlawn_print.jpg}]]);
+	}
+</style>
+    </th:block>
+
+</head>
+<body>
+    <h1>Main content</h1>
+</body>
+</html>

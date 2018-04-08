@@ -5,7 +5,7 @@
 
 	<groupId>edu.sjsu.medical</groupId>
 	<version>0.0.1-SNAPSHOT</version>
-	<packaging>jar</packaging>
+	<packaging>war</packaging>
 
 	<name>medicine-tracker</name>
 	<description>Spring Boot and Thymeleaf Template Engine Example. Medicine Tracker</description>
@@ -40,6 +40,10 @@
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
+		</dependency>
+		<dependency>
+		    <groupId>org.springframework.boot</groupId>
+		    <artifactId>spring-boot-starter-jdbc</artifactId>
 		</dependency>
 	</dependencies>
 

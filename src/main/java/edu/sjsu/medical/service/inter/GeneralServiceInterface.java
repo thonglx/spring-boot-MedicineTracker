@@ -10,5 +10,7 @@ public interface GeneralServiceInterface {
 	public void issueMedicine(IssueForm issueForm);
 	public List<Transaction> getAllTransaction();
 	public void newTransaction(NewTransaction newTransactionFOrm);
+	public String getNodeNameById(int Id);
+	public List<Transaction> getTransactionByNodeId(int nodeId);
 	
 }

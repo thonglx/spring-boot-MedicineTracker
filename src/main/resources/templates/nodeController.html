@@ -21,87 +21,26 @@
 <table class="table table-bordered table-striped table-hover table-responsive">
 	<thead>
 		<tr>
-			<th>
-				Transaction Date
-			</th>
-			<th>
-				Issuer
-			</th>
-			<th>
-				Buyer
-			</th>
-			<th>
-				Seller
-			</th>
-			<th>
-				Medicine
-			</th>
-			<th>
-				Amount
-			</th>
+			<th>Transaction ID</th>
+			<th>Issuer</th>
+			<th>Buyer</th>
+			<th>Seller</th>
+			<th>Date/Time</th>
+			<th>Item</th>
+			<th>Amount</th>
 		</tr>
 	</thead>
 	<tbody>
-		<tr>
-			<td>
-				<p>04/02/2018</p>
-			</td>
-			<td>
-					<p>Hospital</p>
-			</td>
-			<td>
-				<p>N/A</p>
-			</td>
-			<td>
-				<p>N/A</p>
-			</td>
-			<td>
-				<p>A</p>
-			</td>
-			<td>
-				<p>100</p>
-			</td>
+		<tr th:each="transaction : ${transactions}">
+   			<td><p th:text="${transaction.transactionId}"></p></td>
+   			<td><p th:text="${transaction.issuer}"></p></td>
+   			<td><p th:text="${transaction.buyer}"></p></td>
+   			<td><p th:text="${transaction.seller}"></p></td>
+   			<td><p th:text="${transaction.date}"></p></td>
+   			<td><p th:text="${transaction.item}"></p></td>
+   			<td><p th:text="${transaction.amount}"></p></td>
 		</tr>
-				<tr>
-			<td>
-				[CONTENT]
-			</td>
-			<td>
-				[CONTENT]
-			</td>
-			<td>
-				[CONTENT]
-			</td>
-			<td>
-				[CONTENT]
-			</td>
-			<td>
-				[CONTENT]
-			</td>
-			<td>
-				[CONTENT]
-			</td>
-		</tr>
-				<tr>
-			<td>
-				[CONTENT]
-			</td>
-			<td>
-				[CONTENT]
-			</td>
-			<td>
-				[CONTENT]
-			</td>
-			<td>
-				[CONTENT]
-			</td>
-			<td>
-				[CONTENT]
-			</td>
-			<td>
-				[CONTENT]
-			</td>
-		</tr>
+
 	</tbody>
 </table>
 </div>

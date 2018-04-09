@@ -23,18 +23,20 @@ public class NodeController{
 	@Autowired
 	GeneralService generalService;
 	
-	@GetMapping({"/node/{nodeName}"})
+	@GetMapping({"/node/{nodeId}"})
     public String home(
-    		@PathVariable(value = "nodeName")
-			String nodeName,
+    		@PathVariable(value = "nodeId")
+			Integer nodeId,
     		Model model,
     		@ModelAttribute IssueForm issueForm,
     		@ModelAttribute NewTransaction newTransactionForm
     		) {
+		String nodeName= generalService.getNodeNameById(nodeId);
         model.addAttribute("title", "Node Name");
         model.addAttribute("issueForm", issueForm);
         model.addAttribute("newTransactionForm", newTransactionForm);
         model.addAttribute("nodeName", nodeName);
+        model.addAttribute("transactions", generalService.getTransactionByNodeId(nodeId));
         return "nodeController";
     }
 	

@@ -3,6 +3,7 @@ package edu.sjsu.medical.sql;
 public interface SQLQueries {
 	public static final String ALL_PRODUCTS_INFO = "SELECT PRODUCT_ID,PRODUCT_NAME,EXPIRED_DATE,INGREDIENT,NOTICE FROM Tyro119H.PRODUCT;";
 	public static final String ISSUE = "INSERT INTO Tyro119H.TRANSACTION  (ISSUER,ITEM,AMOUNT) VALUES(?,?,?)";
+	public static final String NODE_NAME = "SELECT NODE_NAME FROM Tyro119H.NODE WHERE NODE_ID = ?";
 	public static String ALL_TRANSACTIONS = "SELECT T.TRANSACTION_ID, " + 
 											"(SELECT N.NODE_NAME  " + 
 											"        FROM   Tyro119H.NODE N  " + 

@@ -29,4 +29,14 @@ public class GeneralService implements GeneralServiceInterface {
 		dao.newTransaction(newTransactionForm);
 		
 	}
+
+	@Override
+	public String getNodeNameById(int Id) {
+		return dao.getNodeNameById(Id);
+	}
+
+	@Override
+	public List<Transaction> getTransactionByNodeId(int nodeId) {
+		return dao.getTransactionByNodeId(nodeId);
+	}
 }

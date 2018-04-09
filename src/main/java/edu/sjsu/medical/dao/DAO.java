@@ -19,6 +19,12 @@ import edu.sjsu.medical.sql.SQLQueries;
 public class DAO {
 	@Autowired
 	private JdbcTemplate jtm;
+	
+	public String getNodeNameById(int Id) {
+		    String nodeName = (String) jtm.queryForObject(
+		    		SQLQueries.NODE_NAME, new Object[] { Id }, String.class);
+		    return nodeName;
+		}
 
 	public void  issueMedicine(IssueForm issueForm) {
 		jtm.update(SQLQueries.ISSUE, new Object[] { issueForm.getNodeId(),
@@ -52,4 +58,27 @@ public class DAO {
 			}
 			    });  
 			}  
+	
+	public List<Transaction>  getTransactionByNodeId(int nodeId) {
+		String whereClause = " WHERE T.ISSUER = "+ nodeId + " OR T.SELLER  = " + nodeId + " OR T.BUYER = "+ nodeId;
+		return jtm.query(SQLQueries.ALL_TRANSACTIONS + whereClause , new RowMapper<Transaction>(){  
+			
+			@Override  
+			  public Transaction mapRow(ResultSet rs, int rownumber) throws SQLException {  
+		      Transaction transaction = 
+		    		new Transaction(rs.getInt("TRANSACTION_ID"), 
+					rs.getString("ISSUER"), 
+					rs.getString("SELLER"),
+					rs.getString("BUYER"),
+					rs.getDate("TIME_STAMP"),
+					rs.getString("PRODUCT_NAME"),
+					rs.getInt("AMOUNT")
+					);
+			return transaction;                    
+			}
+			    });  
+			} 
+	
+	
+	
 }

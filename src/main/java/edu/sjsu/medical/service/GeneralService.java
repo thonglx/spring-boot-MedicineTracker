@@ -25,8 +25,8 @@ public class GeneralService implements GeneralServiceInterface {
 	}
 
 	@Override
-	public void newTransaction(NewTransaction newTransactionFOrm) {
-		// TODO Auto-generated method stub
+	public void newTransaction(NewTransaction newTransactionForm) {
+		dao.newTransaction(newTransactionForm);
 		
 	}
 }

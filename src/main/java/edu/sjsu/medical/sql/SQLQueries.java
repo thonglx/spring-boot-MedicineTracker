@@ -18,5 +18,5 @@ public interface SQLQueries {
 											"        T.AMOUNT " + 
 											"FROM Tyro119H.TRANSACTION T " + 
 											"JOIN Tyro119H.PRODUCT P ON T.ITEM = P.PRODUCT_ID ";
-	public static String NEW_TRANSACTION ="";
+	public static String NEW_TRANSACTION ="INSERT INTO Tyro119H.TRANSACTION (BUYER,SELLER,ITEM,AMOUNT) VALUES (?,?,?,?)";
 }

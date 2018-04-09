@@ -53,8 +53,7 @@ public class NodeController{
     		Model model,
     		@ModelAttribute NewTransaction newTransactionForm
     		) {
-		System.out.println(newTransactionForm.toString());
-
+		generalService.newTransaction(newTransactionForm);
         return "redirect:/mainMenu";
     }
 	

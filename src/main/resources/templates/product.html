@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.springframework.org/security/tags">
+<head th:include="mainLayout :: headerFragment(${title})"></head>
+<body>
+      <nav th:replace="layout :: header"></nav>
+      <div id="wrapper" class= "containter">
+         <div class="page-header">
+            <h2><span th:text="${title}"></span></h2>
+         </div>
+
+<div id="addTopMargin"></div>
+<table class="table table-bordered table-striped table-hover table-responsive">
+	<thead>
+		<tr>
+			<th>Product ID</th>
+			<th>Product Name</th>
+			<th>Expired Date</th>
+			<th>Ingredient</th>
+			<th>Notice</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr th:each="product : ${products}">
+   			<td><p th:text="${product.productID}"></p></td>
+   			<td><p th:text="${product.productName}">Test</p></td>
+   			<td><p th:text="${product.date}">Test</p></td>
+   			<td><p th:text="${product.ingredient}">Test</p></td>
+   			<td><p th:text="${product.notice}">Test</p></td>
+		</tr>
+
+	</tbody>
+</table>
+
+
+</div><!-- /.wrapper -->
+
+</body>
+</html>

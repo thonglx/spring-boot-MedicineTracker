@@ -5,14 +5,17 @@
       <nav th:replace="layout :: header"></nav>
       <div id="wrapper" class= "containter">
          <div class="page-header">
-            <h1>Node Name's Information </h1>
+            <h1><span th:text="${nodeName}"></span>'s Information </h1>
          </div>
 <div class="btn-group" role="group" aria-label="Basic example">
   <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#issueMedicine" >Issue Medicine</button>
   <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#newTransaction" >New Transaction</button>
   <button type="button"  class="btn btn-secondary" data-toggle="collapse" data-target="#allTransactions">All Transactions</button>
 </div>
-
+<div id="addTopMargin"></div>
+<!-- 	<th:block th:if="${#lists.isEmpty(inventories)}">
+        <p class="alert alert-info"><span th:text="${nodeName}"></span> does not have any products on hand. Please issue a product</p>
+    </th:block> -->
 <div id="allTransactions" class="collapse">
 <div id="addTopMargin"></div>
 <table class="table table-bordered table-striped table-hover table-responsive">
@@ -103,14 +106,6 @@
 </table>
 </div>
 
-
-<!--   <div class="form-group row">
-    <label for="nodeName" class="col-sm-2 col-form-label">Node Name</label>
-    <div class="col-sm-10">
- 		<p class="form-control-static">Node Name goes here</p>
-    </div>
-  </div> -->
-
 <!-- Modal issue Medicine -->
 <div id="issueMedicine" class="modal fade" role="dialog">
   <div class="modal-dialog">
@@ -121,37 +116,40 @@
         <button type="button" class="close" data-dismiss="modal">&times;</button>
         <h4 class="modal-title">Issue Medicine</h4>
       </div>
+      <form th:object="${issueForm}" th:action="@{/issue}">
       <div class="modal-body">
-        <form>
+       <!-- Issue Form -->
 
-  <div class="form-group">
-    <label for="nodeSelect">Select Issuer</label>
-    <select class="form-control" id="nodeSelect">
-      <option>Hospital</option>
-      <option>Pharmacy</option>
-      <option>Patient</option>
-    </select>
-  </div>
-  
-   <div class="form-group">
-    <label for="medicineSelect">Select Medicine</label>
-    <select class="form-control" id="medicineSelect">
-      <option>A</option>
-      <option>B</option>
-      <option>C</option>
-    </select>
-  </div>
-  
-   <div class="form-group">
-    <label for="Amount">Amount</label>
-    <input type="Number" class="form-control" id="medicineAmount" placeholder="100"/>
-  </div>
+		  <div class="form-group">
+		    <label for="nodeSelect">Select Issuer</label>
+		    <select th:field="*{nodeId}"  class="form-control" >
+		      <option value="1">Hospital</option>
+		      <option value="2">Pharmacy</option>
+		      <option value="3">Patient</option>
+		    </select>
+		  </div>
+		  
+		   <div class="form-group">
+		    <label for="medicineSelect">Select Medicine</label>
+		    <select th:field="*{productId}"  class="form-control" >
+		      <option value="1">A</option>
+		      <option value="2">B</option>
+		      <option value="3">C</option>
+		    </select>
+		  </div>
+		  
+		   <div class="form-group">
+		    <label >Amount</label>
+		    <input id="newAmount" name="newAmount"  type="Number" class="form-control"/>
+		  </div>
 
-</form>
+		
       </div>
       <div class="modal-footer">
+        <button type="submit" class="btn btn-success">Issue</button>	
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
       </div>
+      </form><!-- End Issue Form -->
     </div>
 
   </div>
@@ -168,46 +166,49 @@
         <button type="button" class="close" data-dismiss="modal">&times;</button>
         <h4 class="modal-title">New Transaction</h4>
       </div>
+      <form th:action="@{/newTransaction}" th:object="${newTransactionForm}">
       <div class="modal-body">
-        <form>
+        
 
   <div class="form-group">
     <label for="nodeSelect">Select Seller</label>
-    <select class="form-control" id="selectSeller">
-      <option>Hospital</option>
-      <option>Pharmacy</option>
-      <option>Patient</option>
+    <select th:field="*{sellerId}" class="form-control" >
+      <option value="1">Hospital</option>
+      <option value="2">Pharmacy</option>
+      <option value="3">Patient</option>
     </select>
   </div>
   
     <div class="form-group">
     <label for="nodeSelect">Select Buyer</label>
-    <select class="form-control" id="selectBuyer">
-      <option>Hospital</option>
-      <option>Pharmacy</option>
-      <option>Patient</option>
+    <select th:field="*{buyerId}"  class="form-control" >
+      <option value="1">Hospital</option>
+      <option value="2">Pharmacy</option>
+      <option value="3">Patient</option>
     </select>
   </div>
   
    <div class="form-group">
     <label for="medicineSelect">Select Medicine</label>
-    <select class="form-control" id="selectMedicine">
-      <option>A</option>
-      <option>B</option>
-      <option>C</option>
+    <select th:field="*{productId}"  class="form-control" >
+      <option value="1">A</option>
+      <option value="2">B</option>
+      <option value="3">C</option>
     </select>
   </div>
   
    <div class="form-group">
     <label for="Amount">Amount</label>
-    <input type="Number" class="form-control" id="transactionAmount" placeholder="100"/>
+    <input id="amount" name="amount"  type="Number" class="form-control"/>
   </div>
 
-</form>
+
       </div>
       <div class="modal-footer">
+        <button type="submit" class="btn btn-success">Create</button>
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
       </div>
+      </form>
     </div>
 
   </div>

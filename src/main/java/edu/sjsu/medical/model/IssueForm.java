@@ -3,7 +3,8 @@ package edu.sjsu.medical.model;
 public class IssueForm {
 	Integer nodeId;
 	Integer productId;
-	Integer amount;
+	Integer newAmount;
+	
 	public Integer getNodeId() {
 		return nodeId;
 	}
@@ -16,17 +17,17 @@ public class IssueForm {
 	public void setProductId(Integer productId) {
 		this.productId = productId;
 	}
-	public Integer getAmount() {
-		return amount;
+	public Integer getNewAmount() {
+		return newAmount;
 	}
-	public void setAmount(Integer amount) {
-		this.amount = amount;
+	public void setNewAmount(Integer newAmount) {
+		this.newAmount = newAmount;
 	}
 	@Override
 	public String toString() {
-		return "IssueForm [nodeId=" + nodeId + ", productId=" + productId + ", amount=" + amount + "]";
+		return "IssueForm [nodeId=" + nodeId + ", productId=" + productId + ", newAmount=" + newAmount + "]";
 	}
-	
+
 	
 
 }

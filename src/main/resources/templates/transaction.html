@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.springframework.org/security/tags">
+<head th:include="mainLayout :: headerFragment(${title})"></head>
+<body>
+      <nav th:replace="layout :: header"></nav>
+      <div id="wrapper" class= "containter">
+         <div class="page-header">
+            <h2><span th:text="${title}"></span></h2>
+         </div>
+
+<div id="addTopMargin"></div>
+<table class="table table-bordered table-striped table-hover table-responsive">
+	<thead>
+		<tr>
+			<th>Transaction ID</th>
+			<th>Issuer</th>
+			<th>Buyer</th>
+			<th>Seller</th>
+			<th>Date/Time</th>
+			<th>Item</th>
+			<th>Amount</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr th:each="transaction : ${transactions}">
+   			<td><p th:text="${transaction.transactionId}"></p></td>
+   			<td><p th:text="${transaction.issuer}"></p></td>
+   			<td><p th:text="${transaction.buyer}"></p></td>
+   			<td><p th:text="${transaction.seller}"></p></td>
+   			<td><p th:text="${transaction.date}"></p></td>
+   			<td><p th:text="${transaction.item}"></p></td>
+   			<td><p th:text="${transaction.amount}"></p></td>
+		</tr>
+
+	</tbody>
+</table>
+
+
+</div><!-- /.wrapper -->
+
+</body>
+</html>

@@ -20,4 +20,11 @@ public interface SQLQueries {
 											"FROM Tyro119H.TRANSACTION T " + 
 											"JOIN Tyro119H.PRODUCT P ON T.ITEM = P.PRODUCT_ID ";
 	public static String NEW_TRANSACTION ="INSERT INTO Tyro119H.TRANSACTION (BUYER,SELLER,ITEM,AMOUNT) VALUES (?,?,?,?)";
+	
+	public static String INVENTORY = "SELECT P.PRODUCT_NAME, I.AMOUNT_ON_HAND FROM Tyro119H.INVENTORY I " + 
+									" JOIN Tyro119H.PRODUCT P ON " + 
+									" I.PRODUCT_ID = P.PRODUCT_ID ";
+	public static String ISSUE_INVENTORY ="UPDATE Tyro119H.INVENTORY " + 
+										" SET AMOUNT_ON_HAND = ? + AMOUNT_ON_HAND " + 
+										" WHERE NODE_ID = ? AND PRODUCT_ID = ? ";
 }

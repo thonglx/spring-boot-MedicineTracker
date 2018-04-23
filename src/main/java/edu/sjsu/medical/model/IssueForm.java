@@ -23,6 +23,7 @@ public class IssueForm {
 	public void setNewAmount(Integer newAmount) {
 		this.newAmount = newAmount;
 	}
+	
 	@Override
 	public String toString() {
 		return "IssueForm [nodeId=" + nodeId + ", productId=" + productId + ", newAmount=" + newAmount + "]";

@@ -32,11 +32,12 @@ public class NodeController{
     		@ModelAttribute NewTransaction newTransactionForm
     		) {
 		String nodeName= generalService.getNodeNameById(nodeId);
-        model.addAttribute("title", "Node Name");
+        model.addAttribute("title", nodeName);
         model.addAttribute("issueForm", issueForm);
         model.addAttribute("newTransactionForm", newTransactionForm);
         model.addAttribute("nodeName", nodeName);
         model.addAttribute("transactions", generalService.getTransactionByNodeId(nodeId));
+        model.addAttribute("inventories",generalService.getInventoryByNodeId(nodeId));
         return "nodeController";
     }
 	

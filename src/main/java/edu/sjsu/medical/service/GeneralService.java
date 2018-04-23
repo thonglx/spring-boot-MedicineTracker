@@ -4,8 +4,10 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import edu.sjsu.medical.dao.DAO;
+import edu.sjsu.medical.model.Inventory;
 import edu.sjsu.medical.model.IssueForm;
 import edu.sjsu.medical.model.NewTransaction;
 import edu.sjsu.medical.model.Transaction;
@@ -16,8 +18,10 @@ public class GeneralService implements GeneralServiceInterface {
 	@Autowired
 	DAO dao;
 	
+	@Transactional
 	public void issueMedicine(IssueForm issueForm) {
 		 dao.issueMedicine(issueForm);
+		 dao.updateInventoryWhenIssue(issueForm);
 	}
 	
 	public List<Transaction> getAllTransaction() {
@@ -39,4 +43,10 @@ public class GeneralService implements GeneralServiceInterface {
 	public List<Transaction> getTransactionByNodeId(int nodeId) {
 		return dao.getTransactionByNodeId(nodeId);
 	}
+	
+	@Override
+	public List<Inventory> getInventoryByNodeId(int nodeId) {
+		return dao.getInventoryByNodeId(nodeId);
+	}
+	
 }

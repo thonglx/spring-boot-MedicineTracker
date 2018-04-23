@@ -10,6 +10,7 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Repository;
 
+import edu.sjsu.medical.model.Inventory;
 import edu.sjsu.medical.model.IssueForm;
 import edu.sjsu.medical.model.NewTransaction;
 import edu.sjsu.medical.model.Transaction;
@@ -29,6 +30,12 @@ public class DAO {
 	public void  issueMedicine(IssueForm issueForm) {
 		jtm.update(SQLQueries.ISSUE, new Object[] { issueForm.getNodeId(),
 				issueForm.getProductId(),issueForm.getNewAmount()  
+			});
+	}
+	
+	public void  updateInventoryWhenIssue(IssueForm issueForm) {
+		jtm.update(SQLQueries.ISSUE_INVENTORY, new Object[] { issueForm.getNewAmount(),
+				issueForm.getNodeId(),issueForm.getProductId()  
 			});
 	}
 	
@@ -77,8 +84,23 @@ public class DAO {
 			return transaction;                    
 			}
 			    });  
-			} 
+			}
 	
-	
+	public List<Inventory> getInventoryByNodeId (int nodeId){
+		String whereClause = " WHERE I.NODE_ID = " + nodeId;
+		return jtm.query(SQLQueries.INVENTORY + whereClause , new RowMapper<Inventory>(){  
+			
+			@Override  
+			  public Inventory mapRow(ResultSet rs, int rownumber) throws SQLException {  
+				Inventory inventory = 
+		    		new Inventory(
+							rs.getString("PRODUCT_NAME"),
+							rs.getInt("AMOUNT_ON_HAND")
+					);
+			return inventory;                    
+			}
+			    });  
+			
+	}
 	
 }

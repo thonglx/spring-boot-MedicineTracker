@@ -29,9 +29,11 @@ public class GeneralService implements GeneralServiceInterface {
 	}
 
 	@Override
+	@Transactional
 	public void newTransaction(NewTransaction newTransactionForm) {
 		dao.newTransaction(newTransactionForm);
-		
+		dao.updateInventoryNewTransaction(newTransactionForm);
+		dao.subtractInventoryNewTransaction(newTransactionForm);
 	}
 
 	@Override

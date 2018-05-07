@@ -39,6 +39,8 @@ public class DAO {
 			});
 	}
 	
+	
+	
 	public void  newTransaction(NewTransaction newTransactionForm) {
 		jtm.update(SQLQueries.NEW_TRANSACTION, new Object[] { newTransactionForm.getSellerId(),
 																newTransactionForm.getBuyerId(),
@@ -102,5 +104,16 @@ public class DAO {
 			    });  
 			
 	}
-	
+
+	public void updateInventoryNewTransaction(NewTransaction newTransactionForm) {
+		jtm.update(SQLQueries.ISSUE_INVENTORY, new Object[] { newTransactionForm.getAmount(),newTransactionForm.getBuyerId(),
+				newTransactionForm.getProductId()
+			});
+	}
+
+	public void subtractInventoryNewTransaction(NewTransaction newTransactionForm) {
+		jtm.update(SQLQueries.SUBTRACT_INVENTORY, new Object[] { newTransactionForm.getAmount(),newTransactionForm.getSellerId(),
+				newTransactionForm.getProductId()
+			});
+	}
 }

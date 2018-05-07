@@ -7,7 +7,11 @@
          <div class="page-header">
             <h2><span th:text="${title}"></span></h2>
          </div>
-
+    <th:block th:unless = "${successMessage == null}">
+		<div class="alert " th:classappend="${isDelete} ? alert-danger : alert-success">
+		  <strong th:text = "${successMessage}">Success!</strong>
+		</div>
+    </th:block>
 <div id="addTopMargin"></div>
 <table class="table table-bordered table-striped table-hover table-responsive">
 	<thead>

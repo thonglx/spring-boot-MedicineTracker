@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
-
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import edu.sjsu.medical.model.IssueForm;
 import edu.sjsu.medical.model.NewTransaction;
@@ -45,19 +45,25 @@ public class NodeController{
 	@RequestMapping( value = {"/issue"})
     public String issue(  		
     		Model model,
+    		RedirectAttributes ra,
     		@ModelAttribute IssueForm issueForm
     		) {
+
 		generalService.issueMedicine(issueForm);
-        return "redirect:/mainMenu";
+		ra.addFlashAttribute("successMessage", "Transaction has been successfully commited.");
+
+        return "redirect:/transaction";
     }
 	
 	@RequestMapping( value = {"/newTransaction"})
     public String newTransaction(  		
     		Model model,
+    		RedirectAttributes ra,
     		@ModelAttribute NewTransaction newTransactionForm
     		) {
 		generalService.newTransaction(newTransactionForm);
-        return "redirect:/mainMenu";
+		ra.addFlashAttribute("successMessage", "Transaction has been successfully commited.");
+        return "redirect:/transaction";
     }
 	
 	@RequestMapping( value = {"/product"})

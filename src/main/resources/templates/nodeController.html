@@ -10,7 +10,7 @@
 <div class="btn-group" role="group" aria-label="Basic example">
   <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#issueMedicine" >Prescribe Medicine</button>
   <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#newTransaction" >New Transaction</button>
-  <button type="button"  class="btn btn-secondary" data-toggle="collapse" data-target="#allTransactions">All Transactions</button>
+  <button type="button"  class="btn btn-secondary" data-toggle="collapse" data-target="#allTransactions" th:text="${nodeName + ' Transactions'}">All Transactions</button>
   <button type="button"  class="btn btn-secondary" data-toggle="collapse" data-target="#allInventory">On Hand Inventory</button>
 
 </div>

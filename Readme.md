@@ -1,4 +1,4 @@
-# Spring Boot and Thymeleaf Example
+# Spring-Boot-MedicineTracker
 
 Build a simple Hello World application using Spring Boot and Thymeleaf to demonstrate transfer of owner ship between 3 parties.
 This application is build on top of spring - boot demo application 

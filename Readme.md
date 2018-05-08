@@ -23,6 +23,8 @@ git clone https://github.com/thonglx/spring-boot-MedicineTracker.git
 ```bash
 mvn spring-boot:run
 ```
+## Database Schema
+![alt text](https://i.imgur.com/1YMnky3.png)
 
 ## Live Demo
 

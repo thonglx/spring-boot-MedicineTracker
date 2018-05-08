@@ -10,6 +10,18 @@ git clone https://github.com/callicoder/spring-boot-thymeleaf-tour.git
 
 2. Maven - 3.x.x
 
+3. IDE to build and run the application.
+
+## Objectives
+* Demonstrate transfer of ownership between parties
+* Maintain a consistent view for different nodes
+
+## Functions
+* Basic CRUD operation
+* Record transactions between different nodes
+* Display different transactions data and inventory on hand base on node's owners.
+
+
 ## Steps to setup
 
 **1. Clone the application**
@@ -28,6 +40,8 @@ mvn spring-boot:run
 
 ## Live Demo
 
-You run the live demo of this appltcation
+You can run the live demo of this appltcation at:
 
 <http://tyro119h2018.us-east-2.elasticbeanstalk.com//>
+
+The demo is running on AWS using elasticbeanstalk.

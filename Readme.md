@@ -1,6 +1,8 @@
 # Spring Boot and Thymeleaf Example
 
-Build a simple Hello World application using Spring Boot and Thymeleaf
+Build a simple Hello World application using Spring Boot and Thymeleaf to demonstrate transfer of owner ship between 3 parties.
+This application is build on top of spring - boot demo application 
+git clone https://github.com/callicoder/spring-boot-thymeleaf-tour.git
 
 ## Requirements
 
@@ -13,25 +15,17 @@ Build a simple Hello World application using Spring Boot and Thymeleaf
 **1. Clone the application**
 
 ```bash
-git clone https://github.com/callicoder/spring-boot-thymeleaf-tour.git
+git clone https://github.com/thonglx/spring-boot-MedicineTracker.git
 ```
 
 **2. Build and run the app using maven**
 
 ```bash
-cd spring-boot-thymeleaf-tour
-mvn package
-java -jar target/thymeleaf-tour-0.0.1-SNAPSHOT.jar
-```
-
-You can also run the app without packaging it using -
-
-```bash
 mvn spring-boot:run
 ```
 
-## Tutorial
+## Live Demo
 
-You can find the tutorial for this application on my blog -
+You run the live demo of this appltcation
 
-<https://www.callicoder.com/spring-boot-maven-thymeleaf-tutorial/>
+<http://tyro119h2018.us-east-2.elasticbeanstalk.com//>

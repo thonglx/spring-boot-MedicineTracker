@@ -9,8 +9,7 @@ public class HomeController {
     
 	@GetMapping({"/","mainMenu"})
     public String home(Model model) {
-        model.addAttribute("title", "Main Menu");
-        return "mainMenu";
+        return "index";
 
     }
 }

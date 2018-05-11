@@ -184,14 +184,12 @@ $(document).ready(function($) {
       duration: 300 // don't foget to change the duration also in CSS
     }
   });
-
-  $('#m_date').datepicker({
-	  'format': 'm/d/yyyy',
-	  'autoclose': true
-	});
-	$('#m_time').timepicker();
-
-
+	
+	
+	  $('#m_date').datepicker({
+		  'format': 'mm/dd/yyyy',
+		  'autoclose': true
+		});
 
 });
 

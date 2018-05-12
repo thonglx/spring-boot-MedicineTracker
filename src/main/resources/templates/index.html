@@ -169,11 +169,11 @@
             <h2 class="display-4">Customer Review</h2>
             <div class="row justify-content-center">
               <div class="col-md-7">
-                <p class="lead box" style="color:black;">Total Review: 1 / Average: <span th:text="${'test'}"></span> </p>
-                <p class="lead box" style="color:black; display: none;">Total Review: 2 / Average: </p>
-                <p class="lead box" style="color:black; display: none;">Total Review: 3 / Average: </p>
-                <p class="lead box" style="color:black; display: none;">Total Review: 4 / Average: </p>
-                <p class="lead box" style="color:black; display: none;">Total Review: 5 / Average: </p>
+                <p class="lead box" style="color:black;">Total Review: <span th:text="${#lists.size(springReview)}"></span> / Average: <span th:text="${springAverage}"></span> </p>
+                <p class="lead box" style="color:black; display: none;">Total Review: <span th:text="${#lists.size(phoReview)}"></span> / Average: <span th:text="${phoAverage}"></span>  </p>
+                <p class="lead box" style="color:black; display: none;">Total Review: <span th:text="${#lists.size(noodleReview)}"></span> / Average: <span th:text="${noodleAverage}"></span>  </p>
+                <p class="lead box" style="color:black; display: none;">Total Review: <span th:text="${#lists.size(pancakeReview)}"></span> / Average: <span th:text="${pancakeAverage}"></span>  </p>
+                <p class="lead box" style="color:black; display: none;">Total Review: <span th:text="${#lists.size(hotpotReview)}"></span> / Average: <span th:text="${hotpotAverage}"></span> </p>
               </div>
             </div>
           </div>
@@ -201,62 +201,49 @@
             <div class="tab-content text-left">
               <div class="tab-pane fade show active" id="pills-spring" role="tabpanel" aria-labelledby="pills-breakfast-tab">
                 <div class="row">
-                  <div class="col-md-6 site-animate">
-                    <div class="media menu-item">
-                      <img class="mr-3 img-fluid" th:src="@{/images/menu_1.jpg}" alt="Free Template by colorlib.com" />
+                  <div class="col-md-12 site-animate">
+                  
+                     <div class="media menu-item"   th:each="review : ${springReview}">
+                    <img class="mr-3 img-fluid" th:src="@{'/images/' + ${review.imageNum} +'.jpg'}" alt="Customer Avatar" /> 
                       <div class="media-body">
-                        <h5 class="mt-0">Salted Fried Chicken</h5>
-                        <p style="color:black;" >Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-                        <h6 class="text-primary menu-price">$35.50</h6>
+                        <h5 class="mt-0" th:text="${review.fullName}">Taylor Swift</h5>
+                         <p style="color:black;" th:text="${review.feedBack}">Best Pho ever!!!</p>
+                        <h6 class="text-primary menu-price" th:text="${review.rating +'/5'}">5/5</h6> 
                       </div>
-                    </div>
+                    </div> 
+                    
+                    
                   </div>
                 </div>
               </div>
               <div class="tab-pane fade" id="pills-pho" role="tabpanel" aria-labelledby="pills-lunch-tab">
                 <div class="row">
-                  <div class="col-md-6 site-animate">
+                  <div class="col-md-12 site-animate">
 
-                    <div class="media menu-item">
-                      <img class="mr-3 img-fluid" th:src="@{/images/menu_3.jpg}"  alt="Free Template by colorlib.com" />
+                     <div class="media menu-item"  th:each="review : ${phoReview}">
+                      <img class="mr-3 img-fluid" th:src="@{'/images/' + ${review.imageNum} +'.jpg'}" alt="Customer Avatar" /> 
                       <div class="media-body">
-                        <h5 class="mt-0">Fried Potato w/ Garlic</h5>
-                        <p style="color:black;" >Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-                        <h6 class="text-primary menu-price">$14.50</h6>
+                        <h5 class="mt-0" th:text="${review.fullName}">Taylor Swift</h5>
+                        <p style="color:black;" th:text="${review.feedBack}">Best Pho ever!!!</p>
+                        <h6 class="text-primary menu-price" th:text="${review.rating +'/5'}">5/5</h6>
                       </div>
                     </div>
 
-                    <div class="media menu-item">
-                      <img class="mr-3 img-fluid" th:src="@{/images/menu_1.jpg}"  alt="Free Template by colorlib.com" />
-                      <div class="media-body">
-                        <h5 class="mt-0">Salted Fried Chicken</h5>
-                        <p style="color:black;" >Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-                        <h6 class="text-primary menu-price">$35.50</h6>
-                      </div>
-                    </div>
+
 
                   </div>
                 </div>
               </div>
                             <div class="tab-pane fade" id="pills-noodle" role="tabpanel" aria-labelledby="pills-lunch-tab">
                 <div class="row">
-                  <div class="col-md-6 site-animate">
+                  <div class="col-md-12 site-animate">
 
-                    <div class="media menu-item">
-                      <img class="mr-3 img-fluid" th:src="@{/images/menu_3.jpg}"  alt="Free Template by colorlib.com" />
+                     <div class="media menu-item"  th:each="review : ${noodleReview}">
+                      <img class="mr-3 img-fluid" th:src="@{'/images/' + ${review.imageNum} +'.jpg'}" alt="Customer Avatar" /> 
                       <div class="media-body">
-                        <h5 class="mt-0">Fried Potato w/ Garlic</h5>
-                        <p style="color:black;" >Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-                        <h6 class="text-primary menu-price">$14.50</h6>
-                      </div>
-                    </div>
-
-                    <div class="media menu-item">
-                      <img class="mr-3 img-fluid" th:src="@{/images/menu_1.jpg}"  alt="Free Template by colorlib.com" />
-                      <div class="media-body">
-                        <h5 class="mt-0">Salted Fried Chicken</h5>
-                        <p style="color:black;" >Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-                        <h6 class="text-primary menu-price">$35.50</h6>
+                        <h5 class="mt-0" th:text="${review.fullName}">Taylor Swift</h5>
+                        <p style="color:black;" th:text="${review.feedBack}">Best Pho ever!!!</p>
+                        <h6 class="text-primary menu-price" th:text="${review.rating +'/5'}">5/5</h6>
                       </div>
                     </div>
             
@@ -265,14 +252,14 @@
               </div>
            <div class="tab-pane fade" id="pills-pancake" role="tabpanel" aria-labelledby="pills-lunch-tab">
                 <div class="row">
-                  <div class="col-md-6 site-animate">
+                  <div class="col-md-12 site-animate">
 
-                    <div class="media menu-item">
-                      <img class="mr-3 img-fluid" th:src="@{/images/menu_3.jpg}"  alt="Free Template by colorlib.com" />
+                     <div class="media menu-item"  th:each="review : ${pancakeReview}">
+                      <img class="mr-3 img-fluid" th:src="@{'/images/' + ${review.imageNum} +'.jpg'}" alt="Customer Avatar" /> 
                       <div class="media-body">
-                        <h5 class="mt-0">Fried Potato w/ Garlic</h5>
-                        <p style="color:black;" >Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-                        <h6 class="text-primary menu-price">$14.50</h6>
+                        <h5 class="mt-0" th:text="${review.fullName}">Taylor Swift</h5>
+                        <p style="color:black;" th:text="${review.feedBack}">Best Pho ever!!!</p>
+                        <h6 class="text-primary menu-price" th:text="${review.rating +'/5'}">5/5</h6>
                       </div>
                     </div>
            
@@ -281,23 +268,14 @@
               </div>
               <div class="tab-pane fade" id="pills-hotpot" role="tabpanel" aria-labelledby="pills-dinner-tab">
                 <div class="row">
-                  <div class="col-md-6 site-animate">
+                  <div class="col-md-12 site-animate">
 
-                    <div class="media menu-item">
-                      <img class="mr-3 img-fluid" th:src="@{/images/menu_2.jpg}"  alt="Free Template by colorlib.com" />
+                     <div class="media menu-item"  th:each="review : ${hotpotReview}">
+                      <img class="mr-3 img-fluid" th:src="@{'/images/' + ${review.imageNum} +'.jpg'}" alt="Customer Avatar" /> 
                       <div class="media-body">
-                        <h5 class="mt-0">Italian Sauce Mushroom</h5>
-                        <p style="color:black;" >Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-                        <h6 class="text-primary menu-price">$24.50</h6>
-                      </div>
-                    </div>
-
-                    <div class="media menu-item">
-                      <img class="mr-3 img-fluid" th:src="@{/images/menu_1.jpg}"  alt="Free Template by colorlib.com" />
-                      <div class="media-body">
-                        <h5 class="mt-0">Salted Fried Chicken</h5>
-                        <p style="color:black;" >Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-                        <h6 class="text-primary menu-price">$35.50</h6>
+                        <h5 class="mt-0" th:text="${review.fullName}">Taylor Swift</h5>
+                        <p style="color:black;" th:text="${review.feedBack}">Best Pho ever!!!</p>
+                        <h6 class="text-primary menu-price" th:text="${review.rating +'/5'}">5/5</h6>
                       </div>
                     </div>
          
@@ -487,11 +465,11 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
                   <small>CLOSE </small><span aria-hidden="true">&times;</span>
                 </button>
                 <h1 class="mb-4">Leave A Review</h1>  
-                <form name="myForm" action="#" onsubmit="return validateForm()" method="post">
+                <form th:object="${reviewForm}"  name="myForm" action="/postReview" onsubmit="return validateForm()" method="post">
                   <div class="row">
                     <div class="col-md-6 form-group">
-                      <label for="m_fullName">Full Name</label>
-                      <input type="text" class="form-control" id="m_fullName" />
+                      <label for="fullName">Full Name</label>
+                      <input type="text" class="form-control" th:field="*{fullName}" required="required" />
                     </div>
                     <div class="col-md-6 form-group">
                       <label for="m_date">Birthday</label>
@@ -500,8 +478,8 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
                   </div>
                   <div class="row">
                     <div class="col-md-6 form-group">
-                      <label for="m_people">Rating</label>
-                        <select name="" id="m_people" class="form-control">
+                      <label for="rating">Rating</label>
+                        <select th:field="*{rating}" class="form-control">
                         <option value="1">1</option>
                         <option value="2">2</option>
                         <option value="3">3</option>
@@ -510,8 +488,8 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
                       </select>
                     </div>
                    <div class="col-md-6 form-group">
-                      <label for="m_people">Dish</label>
-                        <select name="" id="m_people" class="form-control">
+                      <label for="productName">Dish</label>
+                        <select th:field="*{productName}" class="form-control">
                         <option value="Spring">Spring Rolls</option>
                         <option value="Pho">Pho</option>
                         <option value="Noodle">Noodle</option>
@@ -524,8 +502,8 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 
                   <div class="row">
                     <div class="col-md-12 form-group">
-                      <label for="m_message">Message</label>
-                      <textarea class="form-control" id="m_message" cols="30" rows="7"></textarea>
+                      <label for="feedBack">Message</label>
+                      <textarea class="form-control" th:field="*{feedBack}" cols="30" rows="7" required="required" ></textarea>
                     </div>
                   </div>
                   

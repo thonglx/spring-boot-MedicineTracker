@@ -9,14 +9,14 @@ import org.springframework.boot.web.support.SpringBootServletInitializer;
 
 @SpringBootApplication
 
-public class MedicalTracking extends SpringBootServletInitializer {
+public class VietEat extends SpringBootServletInitializer {
 
 	@Override
 	protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
-		return application.sources(MedicalTracking.class);
+		return application.sources(VietEat.class);
 	}
 
 	public static void main(String[] args) throws Exception {
-		SpringApplication.run(MedicalTracking.class, args);
+		SpringApplication.run(VietEat.class, args);
 	}
 }
